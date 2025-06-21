@@ -107,5 +107,6 @@
     "doc": {
       "basename": "/use-throttle-callback/"
     }
-  }
+  },
+  "version": "1.0.0"
 }
