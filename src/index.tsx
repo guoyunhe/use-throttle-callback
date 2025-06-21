@@ -18,7 +18,7 @@ export function useThrottleCallback<T extends () => void>(
     if (timeoutRef.current === 0) {
       resultRef.current = (callback as any)(...args);
 
-      timeoutRef.current = setTimeout(() => {
+      timeoutRef.current = window.setTimeout(() => {
         timeoutRef.current = 0;
       }, timeout);
     }
@@ -28,7 +28,7 @@ export function useThrottleCallback<T extends () => void>(
 
   useEffect(() => {
     return () => {
-      clearTimeout(timeoutRef.current);
+      window.clearTimeout(timeoutRef.current);
       timeoutRef.current = 0;
     };
   }, []);
